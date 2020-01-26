@@ -1,0 +1,41 @@
+@import "../../styles/vars";
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: $accent-color-white;
+  .wrapper {
+    max-width: 1760px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    transition: box-shadow 0.4s ease;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      a {
+        align-self: center;
+        .logo-image {
+          max-width: 130px;
+        }
+      }
+
+      .nav-items {
+        display: flex;
+        li {
+          padding: 26px 22px;
+          transition: padding 0.4s ease;
+        }
+      }
+    }
+    &.navShadow {
+      box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
+      nav {
+        .nav-items {
+          li {
+            padding: 18px 22px;
+          }
+        }
+      }
+    }
+  }
+}

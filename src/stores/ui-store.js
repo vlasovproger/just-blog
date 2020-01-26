@@ -14,4 +14,4 @@ class UiStore {
   }
 }
 
-export default remotedev(UiStore, { global: true });
+export default remotedev(UiStore);

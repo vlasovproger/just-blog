@@ -1,0 +1,15 @@
+@import "../../styles/smart-grid";
+.blog-article-list {
+  @include row-flex();
+  justify-content: space-between;
+  @include sm(flex-direction , column);
+  @include sm(align-items, center);
+  li {
+    @include col();
+    @include size(6);
+    @include size-sm(10);
+
+    @include size-xs(12);
+    margin-bottom: 30px;
+  }
+}

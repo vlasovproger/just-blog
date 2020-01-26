@@ -1,10 +1,30 @@
-import React from "react";
-import "./blog-content.scss"
+import React, { useEffect } from "react";
+import BlogArticleList from "../blog-article-list";
+import { observer } from "mobx-react";
+import useStores from "../../hooks/use-stores";
+import useServiceContext from "../../hooks/use-service-context";
+import "./blog-content.scss";
 
-const BlogContent = () => {
+const BlogContent = observer(() => {
+  const {
+    blogStore: { articles, fetchArticles }
+  } = useStores();
+  const { blogService } = useServiceContext();
+  console.log(articles);
+  useEffect(() => {
+    fetchArticles(blogService);
+  }, []);
   return (
-    <div>blog content</div>
-  )
-}
+    <main>
+      <section id="blog">
+        <div className="wrapper">
+          <h4>Our Blog</h4>
+          <h1>Latest News</h1>
+          <BlogArticleList />
+        </div>
+      </section>
+    </main>
+  );
+});
 
-export default BlogContent
+export default BlogContent;

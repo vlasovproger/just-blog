@@ -1,4 +1,4 @@
 import UiStore from "./ui-store";
-import WorksStore from "./works-store";
+import BlogStore from "./blog-store";
 
-export { UiStore, WorksStore };
+export { UiStore, BlogStore };
