@@ -13,7 +13,6 @@ class BlogStore {
   @observable step = 1;
   @observable error = false;
   @action.bound fetchArticles(blogService) {
-    console.log(blogService);
     blogService
       .getArticles()
       .then(

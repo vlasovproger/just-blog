@@ -10,7 +10,6 @@ const BlogContent = observer(() => {
     blogStore: { articles, fetchArticles }
   } = useStores();
   const { blogService } = useServiceContext();
-  console.log(articles);
   useEffect(() => {
     fetchArticles(blogService);
   }, []);
@@ -20,7 +19,7 @@ const BlogContent = observer(() => {
         <div className="wrapper">
           <h4>Our Blog</h4>
           <h1>Latest News</h1>
-          <BlogArticleList />
+          <BlogArticleList articles={articles}/>
         </div>
       </section>
     </main>

@@ -1,20 +1,17 @@
 import React from "react";
+import moment from "moment";
 import "./blog-article-list-item.scss";
 
-const BlogArticleListItem = () => {
+const BlogArticleListItem = ({ title, description, date, imageUrl }) => {
   return (
     <div className="blog-item">
-      <img src="https://picsum.photos/960/540" alt="Article image" />
-      <h2 className="title">
-        the villa overlooks dramatic mountainous scenery
-      </h2>
-      <span className="date">12 - August - 2018</span>
-      <p className="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
-        placeat, inventore rerum aspernatur reprehenderit similique, sint
-        consequuntur porro quisquam quis eum tenetur quia tempore dolores nulla
-        ex vel ut officiis?
-      </p>
+      <div className="image-wrapper">
+        <img src={imageUrl} alt="Article image" />
+      </div>
+
+      <h2 className="title">{title}</h2>
+      <span className="date">{moment(date).format("DD - MMMM - YYYY")}</span>
+      <p className="description">{description}</p>
     </div>
   );
 };

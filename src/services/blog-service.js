@@ -4,7 +4,7 @@ import faker from "faker";
 export default class BlogService {
   getImages = async step => {
     const res = await axios.get(
-      `https://picsum.photos/v2/list?page=${step}&limit=5`
+      `https://picsum.photos/v2/list?page=${step}&limit=8`
     );
     return res.data;
   };
@@ -29,7 +29,7 @@ export default class BlogService {
     return text;
   };
 
-  getArticles = async (step = 1) => {
+  getArticles = async (step = 5) => {
     const imgRes = await this.getImages(step);
 
     let articles = [];
@@ -41,7 +41,7 @@ export default class BlogService {
       const date = faker.date.past();
       const category = faker.random.word();
       const id = image.id;
-      const imageUrl = image.download_url.replace(/[0-9/]{4,9}$/, "966/755");
+      const imageUrl = image.download_url.replace(/[0-9/]{4,9}$/, "960/540");
       articles.push({
         id,
         title,

@@ -7,7 +7,6 @@
 // 800 Black or Extra Bold or Heavy;
 // 900 Extra Black or Fat or Ultra Black
 
-
 @mixin font($f-name, $f-style, $f-weight, $f-url) {
   @font-face {
     font-family: $f-name;
@@ -18,31 +17,27 @@
   }
 }
 
-
 @include font("Poppins", normal, 400, "/fonts/Poppins-Regular.woff2");
 @include font("Poppins", normal, 700, "/fonts/Poppins-Bold.woff2");
 @include font("Montserrat", normal, 800, "/fonts/Montserrat-ExtraBold.woff2");
-// @include font("icon", normal, 400, "/fonts/icons.woff");
-//
-// .icon {
-//   font-family: icon;
-// }
-// .icon-telegram:before {
-//   content: "\e905";
-// }
-// .icon-linkedin:before {
-//   content: "\e903";
-// }
-// .icon-github:before {
-//   content: "\e904";
-// }
-// .icon-arrow-right:before {
-//   content: "\e900";
-// }
-//
-// .icon-arrow-left:before {
-//   content: "\e901";
-// }
-// .icon-arrow-down:before {
-//   content: "\e902";
-// }
+@include font("icon", normal, 400, "/fonts/icons.woff");
+
+.icon {
+  font-family: icon;
+}
+
+.icon-google:before {
+  content: "\e904";
+}
+.icon-pinterest:before {
+  content: "\e900";
+}
+.icon-twitter:before {
+  content: "\e901";
+}
+.icon-facebook:before {
+  content: "\e902";
+}
+.icon-instagram:before {
+  content: "\e903";
+}

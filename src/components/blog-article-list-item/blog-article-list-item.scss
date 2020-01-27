@@ -1,7 +1,10 @@
 @import "../../styles/vars";
 
 .blog-item {
+  .image-wrapper {
+    overflow: hidden;
 
+  }
   h2 {
     font-size: 18px;
     font-weight: 700;
@@ -15,5 +18,12 @@
   }
   p {
     color: $paragraph-color-gray;
+  }
+  img {
+    transition: transform 0.6s ease;
+    vertical-align: bottom;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

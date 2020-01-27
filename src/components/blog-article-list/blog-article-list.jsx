@@ -1,37 +1,22 @@
 import React from "react";
 import BlogArticleListItem from "../blog-article-list-item";
-import './blog-article-list.scss';
+import "./blog-article-list.scss";
 
-const BlogArticleList = () => {
+const BlogArticleList = ({ articles }) => {
   return (
     <ul className="blog-article-list">
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
-      <li>
-        <BlogArticleListItem />
-      </li>
+      {articles.map(article => {
+        return (
+          <li key={article.id}>
+            <BlogArticleListItem
+              title={article.title}
+              description={article.description}
+              date={article.date}
+              imageUrl={article.imageUrl}
+            />
+          </li>
+        );
+      })}
     </ul>
   );
 };

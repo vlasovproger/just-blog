@@ -1,0 +1,51 @@
+@import "../../styles/smart-grid";
+@import "../../styles/vars";
+
+footer {
+  background: $accent-color-black;
+  padding: 80px 0 50px 0;
+  .wrapper {
+    @include wrapper();
+    .footer-content {
+      @include row-flex();
+      h4 {
+        color: $accent-color-white;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 30px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      li,
+      a {
+        color: #ebebeb;
+        font-size: 15px;
+        line-height: 32px;
+      }
+      div {
+        margin-bottom: 30px;
+      }
+      .main-info {
+        @include col();
+        @include size(4);
+        @include size-sm(10);
+      }
+      .links {
+        @include col();
+        @include size(2);
+        @include size-sm(5);
+        @include size-xs(8);
+      }
+      .socials {
+        @include col();
+        @include size(2);
+        @include size-sm(5);
+        @include size-xs(8);
+        ul {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
