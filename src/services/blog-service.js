@@ -25,7 +25,7 @@ export default class BlogService {
   };
 
   getText = async () => {
-    const text = await faker.lorem.text();
+    const text = await faker.lorem.paragraphs(20);
     return text;
   };
 

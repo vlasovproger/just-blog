@@ -13,6 +13,7 @@ const BlogArticleList = ({ articles }) => {
               description={article.description}
               date={article.date}
               imageUrl={article.imageUrl}
+              id={article.id}
             />
           </li>
         );

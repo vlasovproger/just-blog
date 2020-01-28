@@ -38,11 +38,6 @@ const Header = ({ classNamesHam, onHamburgerToggle }) => {
           </Link>
           <ul className="nav-items">
             <li>
-              <Link href="/blog" prefetch={false}>
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
               <Link href="/about" prefetch={false}>
                 <a>About</a>
               </Link>

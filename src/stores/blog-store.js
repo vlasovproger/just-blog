@@ -9,7 +9,9 @@ configure({ enforceActions: "observed" });
 
 class BlogStore {
   @observable articles = [];
-  @observable loading = true;
+  @observable currentArticle = {};
+  @observable loadingArticles = true;
+  @observable loadingArticle = true;
   @observable step = 1;
   @observable error = false;
   @action.bound fetchArticles(blogService) {
@@ -18,6 +20,18 @@ class BlogStore {
       .then(
         action(data => {
           this.articles = data;
+          this.loadingArticles = false;
+        })
+      )
+      .catch(err => (this.error = err));
+  }
+  @action.bound fetchArticle(id, blogService) {
+    blogService
+      .getArticle(id)
+      .then(
+        action(data => {
+          this.currentArticle = data;
+          this.loadingArticle = false;
         })
       )
       .catch(err => (this.error = err));

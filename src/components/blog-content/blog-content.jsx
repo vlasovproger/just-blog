@@ -19,7 +19,7 @@ const BlogContent = observer(() => {
         <div className="wrapper">
           <h4>Our Blog</h4>
           <h1>Latest News</h1>
-          <BlogArticleList articles={articles}/>
+          <BlogArticleList articles={articles} />
         </div>
       </section>
     </main>
