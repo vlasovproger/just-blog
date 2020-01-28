@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import LazyImage from "../lazy-image"
 import "./blog-article-list-item.scss";
 
 const BlogArticleListItem = ({ title, id, description, date, imageUrl }) => {
@@ -9,7 +10,7 @@ const BlogArticleListItem = ({ title, id, description, date, imageUrl }) => {
       <Link href={`/article/${id}`} prefetch={false}>
         <a>
           <div className="image-wrapper">
-            <img src={imageUrl} alt="Article image" />
+          <LazyImage src={imageUrl} alt="Article image"/>
           </div>
 
           <h2 className="title">{title}</h2>
