@@ -1,7 +1,6 @@
 import React from "react";
 import VerticalLines from "../vertical-lines";
 import LazyImage from "../lazy-image";
-import faker from "faker";
 import "./about-content.scss";
 
 const AboutContent = () => {
@@ -27,33 +26,33 @@ const AboutContent = () => {
           <h2>Meat the team</h2>
           <ul className="team">
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src={faker.image.avatar()} />
-              <h4>{`${faker.name.firstName()} ${faker.name.lastName()}`}</h4>
+              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
           </ul>

@@ -15,6 +15,7 @@ class BlogStore {
   @observable step = 1;
   @observable error = false;
   @action.bound fetchArticles(blogService) {
+    this.loadingArticles = true;
     blogService
       .getArticles()
       .then(
@@ -26,6 +27,7 @@ class BlogStore {
       .catch(err => (this.error = err));
   }
   @action.bound fetchArticle(id, blogService) {
+    this.loadingArticle = true;
     blogService
       .getArticle(id)
       .then(

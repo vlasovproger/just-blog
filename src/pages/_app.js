@@ -2,23 +2,16 @@ import App from "next/app";
 import Head from "next/head";
 import React from "react";
 import { PageTransition } from "next-page-transitions";
+import { register, unregister } from "next-offline/runtime";
 import "../styles/main.scss";
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
+  
+  componentDidMount() {
+    register();
   }
-  // componentDidMount() {
-  //   register();
-  // }
-  // componentWillUnmount() {
-  //   unregister();
-  // }
+  componentWillUnmount() {
+    unregister();
+  }
   render() {
     const { Component, pageProps, router } = this.props;
     return (
@@ -51,7 +44,7 @@ class MyApp extends App {
         </Head>
 
         <PageTransition timeout={300} classNames="page-transition">
-          <Component {...pageProps} key={router.route} />
+          <Component key={router.route} />
         </PageTransition>
         <style jsx global>{`
           .page-transition-enter {

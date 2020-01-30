@@ -5,20 +5,24 @@ import useServiceContext from "../../hooks/use-service-context";
 import moment from "moment";
 import LazyImage from "../lazy-image";
 import VerticalLines from "../vertical-lines";
+import Spinner from "../spinner";
 import "./aricle-content.scss";
 
 const ArticleContent = observer(({ id }) => {
   const {
     blogStore: {
       currentArticle: { title, date, imageUrl, text },
-      fetchArticle
+      fetchArticle,
+      loadingArticle
     }
   } = useStores();
   const { blogService } = useServiceContext();
   useEffect(() => {
     fetchArticle(id, blogService);
   }, [id]);
-  if (title) {
+  if (loadingArticle) {
+    return <Spinner />;
+  } else {
     return (
       <main>
         <section id="article">
@@ -34,8 +38,6 @@ const ArticleContent = observer(({ id }) => {
         </section>
       </main>
     );
-  } else {
-    return <div>loading...</div>;
   }
 });
 

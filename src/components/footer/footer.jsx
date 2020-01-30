@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="wrapper">
         <div className="footer-content">
           <div className="main-info">
+            <h4>JustBlog</h4>
             <ul>
-              <h4>JustBlog</h4>
               <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
               <li>Phone number : + (898) 784-7217</li>
               <li>Email : Tatee.architecture@gmail.com</li>
