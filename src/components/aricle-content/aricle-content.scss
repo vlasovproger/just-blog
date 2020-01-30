@@ -4,6 +4,9 @@
 #article {
   @include wrapper();
   .wrapper {
+    img {
+      max-width: 100%;
+    }
     span {
       line-height: 36px;
       text-transform: uppercase;

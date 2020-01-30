@@ -12,7 +12,7 @@ class BlogStore {
   @observable currentArticle = {};
   @observable loadingArticles = true;
   @observable loadingArticle = true;
-  @observable step = 1;
+  @observable step = 6;
   @observable error = false;
   @action.bound fetchArticles(blogService) {
     this.loadingArticles = true;
@@ -22,6 +22,17 @@ class BlogStore {
         action(data => {
           this.articles = data;
           this.loadingArticles = false;
+        })
+      )
+      .catch(err => (this.error = err));
+  }
+  @action.bound fetchNextArticles(blogService) {
+    blogService
+      .getArticles(this.step)
+      .then(
+        action(data => {
+          this.articles= [ ...this.articles, ...data ]
+          this.step++;
         })
       )
       .catch(err => (this.error = err));

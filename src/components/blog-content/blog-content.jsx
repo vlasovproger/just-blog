@@ -6,6 +6,7 @@ import useServiceContext from "../../hooks/use-service-context";
 import BlogHeroSection from "../blog-hero-section";
 import VerticalLines from "../vertical-lines";
 import Spinner from "../spinner";
+import FetchArticlesButton from "../fetch-articles-button";
 import "./blog-content.scss";
 
 const BlogContent = observer(() => {
@@ -22,9 +23,7 @@ const BlogContent = observer(() => {
     return (
       <main>
         <BlogHeroSection
-          article={
-            articles[Math.floor(Math.random() * (articles.length - 1))]
-          }
+          article={articles[Math.floor(Math.random() * (articles.length - 1))]}
         />
         <section id="blog">
           <div className="wrapper">
@@ -32,6 +31,7 @@ const BlogContent = observer(() => {
             <h4>Our Blog</h4>
             <h1>Latest News</h1>
             <BlogArticleList articles={articles} />
+            <FetchArticlesButton />
           </div>
         </section>
       </main>
