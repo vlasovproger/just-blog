@@ -1,0 +1,78 @@
+@import "../../styles/vars";
+@import "../../styles/smart-grid";
+
+#hero {
+  width: 100vw;
+  .wrapper {
+    height: 100vh;
+    @include wrapper();
+    .hero-section-content {
+      height: 100%;
+      @include row-flex();
+      flex-direction: column;
+      justify-content: flex-end;
+      h1 {
+        font-size: 48px;
+        text-transform: uppercase;
+        font-weight: 200;
+        color: $accent-color-white;
+        text-shadow: 0 0px 20px rgba(0, 0, 0, 0.6);
+        @include col();
+        @include size(6);
+        @include size-md(8);
+        @include size-sm(10);
+        @include size-xs(11);
+      }
+      p {
+        font-size: 28px;
+        font-weight: 300;
+        color: $accent-color-white;
+        text-shadow: 0 0px 20px rgba(0, 0, 0, 0.6);
+        margin: 45px 0;
+        @include col();
+        @include size(5);
+        @include size-md(7);
+        @include size-sm(9);
+        @include size-xs(10);
+      }
+      a {
+        @include col();
+        @include size(4);
+        @include size-md(6);
+        @include size-sm(9);
+        @include size-xs(10);
+        font-size: 17px;
+        text-transform: uppercase;
+        color: $accent-color-white;
+        text-shadow: 0 0px 20px rgba(0, 0, 0, 0.8);
+        transition: font-size 0.3s ease;
+        &:hover {
+          font-size: 23px;
+        }
+        margin-bottom: 10%;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 560px) {
+  #hero {
+    .wrapper {
+      .hero-section-content {
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 18px;
+        }
+        a {
+          font-size: 15px;
+
+          &:hover {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}

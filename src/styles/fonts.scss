@@ -17,6 +17,8 @@
   }
 }
 
+@include font("Poppins", normal, 200, "/fonts/Poppins-Light.woff2");
+@include font("Poppins", normal, 300, "/fonts/Poppins-Book.woff2");
 @include font("Poppins", normal, 400, "/fonts/Poppins-Regular.woff2");
 @include font("Poppins", normal, 700, "/fonts/Poppins-Bold.woff2");
 @include font("icon", normal, 400, "/fonts/icons.woff");
@@ -24,7 +26,9 @@
 .icon {
   font-family: icon;
 }
-
+.icon-arrow-right:before {
+  content: "\e905";
+}
 .icon-google:before {
   content: "\e904";
 }

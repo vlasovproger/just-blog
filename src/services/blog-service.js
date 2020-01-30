@@ -20,7 +20,7 @@ export default class BlogService {
     return title;
   };
   getDescription = async () => {
-    const description = await faker.lorem.sentences();
+    const description = await faker.lorem.sentences(2);
     return description;
   };
 
@@ -42,6 +42,10 @@ export default class BlogService {
       const category = faker.random.word();
       const id = image.id;
       const imageUrl = image.download_url.replace(/[0-9/]{4,9}$/, "960/540");
+      const imageUrlFull = image.download_url.replace(
+        /[0-9/]{4,9}$/,
+        "1600/1200"
+      );
       articles.push({
         id,
         title,
@@ -50,7 +54,8 @@ export default class BlogService {
         imageUrl,
         author,
         date,
-        category
+        category,
+        imageUrlFull
       });
     }
     return articles;

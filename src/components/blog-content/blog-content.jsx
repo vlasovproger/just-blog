@@ -3,6 +3,7 @@ import BlogArticleList from "../blog-article-list";
 import { observer } from "mobx-react";
 import useStores from "../../hooks/use-stores";
 import useServiceContext from "../../hooks/use-service-context";
+import BlogHeroSection from "../blog-hero-section";
 import VerticalLines from "../vertical-lines";
 import Spinner from "../spinner";
 import "./blog-content.scss";
@@ -20,6 +21,11 @@ const BlogContent = observer(() => {
   } else {
     return (
       <main>
+        <BlogHeroSection
+          article={
+            articles[Math.floor(Math.random() * (articles.length - 1))]
+          }
+        />
         <section id="blog">
           <div className="wrapper">
             <VerticalLines />
