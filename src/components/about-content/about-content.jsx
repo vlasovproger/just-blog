@@ -9,11 +9,8 @@ const AboutContent = () => {
       <section id="about">
         <div className="wrapper">
           <VerticalLines />
-          <h4 className="subtitle">we are tatee</h4>
-          <h1>
-            Our bulding are inspired by the challenge of balancing function &
-            beauty .
-          </h1>
+          <h4 className="subtitle">this is</h4>
+          <h1>JustBlog</h1>
           <LazyImage src="/images/teem.jpg" />
           <p>
             Justblog is a simple blog with several pages, made using modern
@@ -26,32 +23,32 @@ const AboutContent = () => {
           <h2>Meat the team</h2>
           <ul className="team">
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>
             <li>
-              <LazyImage src='/images/avatar-circle.png' alt="avatar image"/>
+              <LazyImage src="/images/avatar-circle.png" alt="avatar image" />
               <h4>Name Surname</h4>
               <span>Web Developer</span>
             </li>

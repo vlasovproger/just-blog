@@ -6,8 +6,8 @@ const ContactContent = () => {
     <main>
       <section id="contact">
         <div className="wrapper">
-          <h4>Let’s work with us</h4>
-          <h1>Together we can make dream come true</h1>
+          <h4>Let’s make world better</h4>
+          <h1>Together we can make everything</h1>
           <iframe
             src="https://yandex.by/map-widget/v1/-/CKESrUmw"
             frameBorder="1"
@@ -18,15 +18,15 @@ const ContactContent = () => {
             <ul>
               <li>
                 <h3>Address:</h3>
-                <p>991 White St . Dawsonville GA 30534 , New York</p>
+                <p>st. Somestreet , Minsk</p>
               </li>
               <li>
                 <h3>Phone number:</h3>
-                <p>+ (898) 784-7217</p>
+                <p>+ (123) 456-7890</p>
               </li>
               <li>
                 <h3>Email:</h3>
-                <p>Tatee.architecture@gmail.com</p>
+                <p>some.address@gmail.com</p>
               </li>
             </ul>
             <div className="user-information">

@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="main-info">
             <h4>JustBlog</h4>
             <ul>
-              <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
-              <li>Phone number : + (898) 784-7217</li>
-              <li>Email : Tatee.architecture@gmail.com</li>
+              <li>Address : st. Somestreet , Minsk</li>
+              <li>Phone number : + (123) 456-7890</li>
+              <li>Email : some.address@gmail.com</li>
             </ul>
           </div>
           <div className="links">
