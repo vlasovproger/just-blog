@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import useStores from "../../hooks/use-stores";
 import useServiceContext from "../../hooks/use-service-context";
-import moment from "moment";
 import LazyImage from "../lazy-image";
 import VerticalLines from "../vertical-lines";
 import Spinner from "../spinner";
 import "./aricle-content.scss";
+import months from "../../helpers/months";
 
 const ArticleContent = observer(({ id }) => {
   const {
@@ -20,18 +20,21 @@ const ArticleContent = observer(({ id }) => {
   useEffect(() => {
     fetchArticle(id, blogService);
   }, [id]);
+
   if (loadingArticle) {
     return <Spinner />;
   } else {
+    let day = date.getDay();
+    day = day < 10 ? `0${day}` : day;
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
     return (
       <main>
         <section id="article">
           <div className="wrapper">
             <VerticalLines />
             <h1>{title}</h1>
-            <span className="date">
-              {moment(date).format("DD - MMMM - YYYY")}
-            </span>
+            <span className="date">{`${day} - ${month} - ${year}`}</span>
             <LazyImage src={imageUrl} alt="Article image" />
             <p>{text}</p>
           </div>
