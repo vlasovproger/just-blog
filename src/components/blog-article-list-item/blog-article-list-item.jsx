@@ -5,10 +5,11 @@ import months from "../../helpers/months";
 import "./blog-article-list-item.scss";
 
 const BlogArticleListItem = ({ title, id, description, date, imageUrl }) => {
-  let day = date.getDay();
+  const fixedDate = new Date(date);
+  let day = fixedDate.getDay();
   day = day < 10 ? `0${day}` : day;
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
+  const month = months[fixedDate.getMonth()];
+  const year = fixedDate.getFullYear();
   return (
     <div className="blog-item">
       <Link href={`/article/${id}`} prefetch={false}>

@@ -17,9 +17,11 @@ const BlogContent = observer(() => {
   useEffect(() => {
     fetchArticles(blogService);
   }, []);
+
   if (loadingArticles) {
     return <Spinner />;
   } else {
+    console.log(articles[Math.floor(Math.random() * (articles.length - 1))]);
     return (
       <main>
         <BlogHeroSection

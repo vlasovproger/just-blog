@@ -24,10 +24,11 @@ const ArticleContent = observer(({ id }) => {
   if (loadingArticle) {
     return <Spinner />;
   } else {
-    let day = date.getDay();
+    const fixedDate = new Date(date);
+    let day = fixedDate.getDay();
     day = day < 10 ? `0${day}` : day;
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
+    const month = months[fixedDate.getMonth()];
+    const year = fixedDate.getFullYear();
     return (
       <main>
         <section id="article">

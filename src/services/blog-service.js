@@ -1,85 +1,36 @@
-import axios from "axios";
-import faker from "faker";
+import firebase from "../lib/db";
 
-export default class BlogService {
-  getImages = async step => {
-    const res = await axios.get(
-      `https://picsum.photos/v2/list?page=${step}&limit=8`
-    );
-    return res.data;
-  };
-
-  getImage = async id => {
-    const res = await axios.get(`https://picsum.photos/id/${id}/info`);
-
-    return res.data;
-  };
-
-  getTitle = async () => {
-    const title = await faker.random.words(3);
-    return title;
-  };
-  getDescription = async () => {
-    const description = await faker.lorem.sentences(2);
-    return description;
-  };
-
-  getText = async () => {
-    const text = await faker.lorem.paragraphs(20);
-    return text;
-  };
-
-  getArticles = async (step = 5) => {
-    const imgRes = await this.getImages(step);
-
-    let articles = [];
-    for (const image of imgRes) {
-      const title = await this.getTitle();
-      const description = await this.getDescription();
-      const text = await this.getText();
-      const author = await faker.name.findName();
-      const date = faker.date.past();
-      const category = faker.random.word();
-      const id = image.id;
-      const imageUrl = image.download_url.replace(/[0-9/]{4,9}$/, "960/540");
-      const imageUrlFull = image.download_url.replace(
-        /[0-9/]{4,9}$/,
-        "1600/1200"
-      );
-      articles.push({
-        id,
-        title,
-        description,
-        text,
-        imageUrl,
-        author,
-        date,
-        category,
-        imageUrlFull
+export default class ContentService {
+  getArticles = async (step = 1) => {
+    const articlesRef = firebase
+        .database()
+        .ref("articles/articles")
+        .orderByKey()
+        .startAt(`${step * 6}`)
+        .limitToFirst(6);
+    let result = await new Promise((resolve, reject) => {
+      articlesRef.on("value", snapshot => {
+        resolve(snapshot);
       });
-    }
-    return articles;
+    });
+
+    return Object.values(result.val());
   };
 
   getArticle = async id => {
-    const image = await this.getImage(id);
-    const imageUrl = image.download_url.replace(/[0-9/]{4,9}$/, "1920/1080");
-    const title = await this.getTitle();
-    const description = await this.getDescription();
-    const text = await this.getText();
-    const author = await faker.name.findName();
-    const date = faker.date.past();
-    const category = faker.random.word();
-    const article = {
-      id,
-      title,
-      description,
-      text,
-      imageUrl,
-      author,
-      date,
-      category
-    };
+    const articlesRef = firebase
+        .database()
+        .ref("articles/articles")
+        .orderByChild("id")
+        .equalTo(id);
+    let result = await new Promise((resolve, reject) => {
+      articlesRef.on("value", snapshot => {
+        resolve(snapshot);
+      });
+    });
+
+    const article = Object.values(result.val())[0];
+    article.imageUrl = article.imageUrl.replace(/[0-9/]{4,7}$/, "1920/1080");
     return article;
   };
 }
