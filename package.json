@@ -27,6 +27,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-decorators": "^7.7.4",
     "babel-plugin-inline-dotenv": "^1.1.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "@zeit/next-sass": "^1.0.1",
     "@next/bundle-analyzer": "^9.1.4",
     "node-sass": "^4.13.0",
