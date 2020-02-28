@@ -9,7 +9,7 @@ import Spinner from "../spinner";
 import FetchArticlesButton from "../fetch-articles-button";
 import "./blog-content.scss";
 
-const BlogContent = observer(() => {
+const BlogContent: React.FC = observer(() => {
   const {
     blogStore: { articles, fetchArticles, loadingArticles }
   } = useStores();
@@ -21,7 +21,6 @@ const BlogContent = observer(() => {
   if (loadingArticles) {
     return <Spinner />;
   } else {
-    console.log(articles[Math.floor(Math.random() * (articles.length - 1))]);
     return (
       <main>
         <BlogHeroSection

@@ -2,8 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { Parallax } from "react-parallax";
 import "./blog-hero-section.scss";
+import {IArticle} from "../../interfaces";
+type HeroProps = {
+  article: IArticle
+}
 
-const BlogHeroSection = ({ article: { title, description, imageUrl, id } }) => {
+const BlogHeroSection: React.FC<HeroProps> = ({ article: { title, description, imageUrl, id }}) => {
   const imageUrlFull = imageUrl.replace(/[0-9/]{4,7}$/, "1920/1080");
   return (
     <section id="hero">

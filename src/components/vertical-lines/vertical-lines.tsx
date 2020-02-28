@@ -1,7 +1,7 @@
 import React from "react";
 import "./vertical-lines.scss";
 
-const VerticalLines = () => {
+const VerticalLines: React.FC = () => {
   return (
     <div className="vertical-lines">
       <div className="vertical-line colored"></div>

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./header.scss";
 
-const Header = ({ classNamesHam, onHamburgerToggle }) => {
-  const [navShadow, setShadow] = useState("");
+const Header: React.FC = () => {
+  const [navShadow, setShadow] = useState<"navShadow" | "">("");
 
-  const handleScroll = () => {
-    const windowTop = window.scrollY;
+  const handleScroll = (): void => {
+    const windowTop: number = window.scrollY;
 
     windowTop > 100 ? setShadow("navShadow") : setShadow("");
   };

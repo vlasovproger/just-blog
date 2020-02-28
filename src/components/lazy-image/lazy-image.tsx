@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import LazyLoad from "vanilla-lazyload";
+type lazyImapeProps = {
+  alt: string,
+  src: string,
+  srcset?: string,
+  sizes?: string,
+  width?: string,
+  height?: string,
+}
+declare global {
+  interface Document {
+    lazyLoadInstance: any;
+  }
+}
 
-export default class LazyImage extends Component {
+export default class LazyImage extends Component<lazyImapeProps, {}> {
+
   componentDidMount() {
     if (!document.lazyLoadInstance) {
       document.lazyLoadInstance = new LazyLoad({

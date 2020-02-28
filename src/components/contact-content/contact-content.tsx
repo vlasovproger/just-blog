@@ -1,7 +1,7 @@
 import React from "react";
 import "./contact-content.scss";
 
-const ContactContent = () => {
+const ContactContent: React.FC = () => {
   return (
     <main>
       <section id="contact">
@@ -53,8 +53,8 @@ const ContactContent = () => {
               placeholder="Message*"
               name="message"
               id="message"
-              cols="30"
-              rows="10"
+              cols={30}
+              rows={10}
               aria-label="enter message"
             ></textarea>
             <button type="submit">Send Message</button>

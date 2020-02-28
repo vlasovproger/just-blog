@@ -3,9 +3,10 @@ import Head from "next/head";
 import React from "react";
 import { PageTransition } from "next-page-transitions";
 import { register, unregister } from "next-offline/runtime";
+import { AppProps } from "next/app";
 import "../styles/main.scss";
+import "../../index.d.ts";
 class MyApp extends App {
-  
   componentDidMount() {
     register();
   }
@@ -13,7 +14,7 @@ class MyApp extends App {
     unregister();
   }
   render() {
-    const { Component, pageProps, router } = this.props;
+    const { Component, router }: AppProps = this.props;
     return (
       <>
         <Head>

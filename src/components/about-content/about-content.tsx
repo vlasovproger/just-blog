@@ -3,7 +3,7 @@ import VerticalLines from "../vertical-lines";
 import LazyImage from "../lazy-image";
 import "./about-content.scss";
 
-const AboutContent = () => {
+const AboutContent: React.FC = () => {
   return (
     <main>
       <section id="about">
@@ -11,7 +11,7 @@ const AboutContent = () => {
           <VerticalLines />
           <h4 className="subtitle">this is</h4>
           <h1>JustBlog</h1>
-          <LazyImage src="/images/teem.jpg" />
+          <LazyImage src="/images/teem.jpg" alt="team" />
           <p>
             Justblog is a simple blog with several pages, made using modern
             technologies such as React, MobX, Next and others. All information

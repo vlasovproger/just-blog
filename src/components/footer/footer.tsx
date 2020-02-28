@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import "./footer.scss";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <div className="wrapper">

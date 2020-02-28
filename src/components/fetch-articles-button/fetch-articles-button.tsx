@@ -4,16 +4,20 @@ import useStores from "../../hooks/use-stores";
 import useServiceContext from "../../hooks/use-service-context";
 import "./fetch-articles-button.scss";
 
-const FetchArticlesButton = observer(() => {
+const FetchArticlesButton: React.FC = observer(() => {
   const {
-    blogStore: { fetchNextArticles,  }
+    blogStore: { fetchNextArticles }
   } = useStores();
   const { blogService } = useServiceContext();
   const handleToggled = () => {
     fetchNextArticles(blogService);
   };
 
-  return <div className="fetch-articles-button" onClick={handleToggled}>Load more...</div>;
+  return (
+    <div className="fetch-articles-button" onClick={handleToggled}>
+      Load more...
+    </div>
+  );
 });
 
 export default FetchArticlesButton;

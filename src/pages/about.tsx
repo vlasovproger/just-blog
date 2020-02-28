@@ -1,16 +1,17 @@
 import React from "react";
-import BlogContent from "../components/blog-content";
+import AboutContent from "../components/about-content";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { NextPage } from "next";
 
-const HomePage = () => {
+const AboutPage: NextPage = () => {
   return (
     <>
       <Header />
-      <BlogContent />
+      <AboutContent />
       <Footer />
     </>
   );
 };
 
-export default HomePage;
+export default AboutPage;

@@ -1,8 +1,11 @@
 import React from "react";
 import BlogArticleListItem from "../blog-article-list-item";
 import "./blog-article-list.scss";
-
-const BlogArticleList = ({ articles }) => {
+import { IArticle } from "../../interfaces";
+type ArticleListProps = {
+  articles: Array<IArticle>;
+};
+const BlogArticleList: React.FC<ArticleListProps> = ({ articles }) => {
   return (
     <ul className="blog-article-list">
       {articles.map(article => {
@@ -14,6 +17,9 @@ const BlogArticleList = ({ articles }) => {
               date={article.date}
               imageUrl={article.imageUrl}
               id={article.id}
+              author={article.author}
+              category={article.category}
+              text={article.text}
             />
           </li>
         );

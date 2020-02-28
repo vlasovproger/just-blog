@@ -2,7 +2,7 @@ import React from "react";
 import VerticalLines from "../vertical-lines";
 import "./error-content.scss";
 
-const ErrorContent = () => {
+const ErrorContent: React.FC = () => {
   return (
     <main>
       <section id="error">
